@@ -1,0 +1,15 @@
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1><%= @employee.name %></h1>
+				<div>
+					<p><%= @employee.title %></p>
+					<p><%= @employee.phone %></p>
+					<p><%= @employee.description %></p>
+					<p><%= image_tag @employee.image_url(:thumb) %></p>
+				</div>
+			</div>
+        </div>
+	</div>
+</div>

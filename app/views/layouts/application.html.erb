@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AGAEmployee</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'employees' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% unless controller_name == "sessions" || action_name == "new" %>
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+		    <ul class="sidebar-nav">
+		        <li class="sidebar-brand">
+		            <a href="#">
+		                AGA Directory
+		            </a>
+		        </li>
+		        <li>
+		            <%= link_to "Directory Search", directory_path %></a>
+		        </li>
+		        <li>
+		            <%= link_to "Edit Profile", :controller => "employees", :action => "edit", :id => session[:user_id] %></a>
+		        </li>
+		        <li>
+		            <%= link_to "Log out", logout_path %>
+		        </li>
+		    </ul>
+		</div>
+		
+		<%= yield %>
+	</div>
+<% else %>
+	<%= yield %>
+<% end %>
+
+</body>
+</html>
