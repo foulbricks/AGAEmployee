@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<% unless controller_name == "sessions" || action_name == "new" %>
+<% unless controller_name == "sessions" || action_name =~ /new|create/ %>
 	<div id="wrapper">
 
 		<!-- Sidebar -->
